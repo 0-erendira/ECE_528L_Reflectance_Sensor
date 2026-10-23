@@ -43,7 +43,7 @@ void Reflectance_Sensor_Init()
     // and setting Bit 3 of the DIR register for P5
     P5->SEL0 &= ~0x08;
     P5->SEL1 &= ~0x08;
-    P5->DIR  |= 0x08;
+    P5->DIR |= 0x08;
 
     // Turn off the even-numbered IR LEDs by
     // clearing Bit 3 of the OUT register for P5
@@ -54,7 +54,7 @@ void Reflectance_Sensor_Init()
     // and setting Bit 2 of the DIR register for P9
     P9->SEL0 &= ~0x04;
     P9->SEL1 &= ~0x04;
-    P9->DIR  |= 0x04;
+    P9->DIR |= 0x04;
 
     // Turn off the odd-numbered IR LEDs by
     // clearing Bit 2 of the OUT register for P9
@@ -64,8 +64,7 @@ void Reflectance_Sensor_Init()
     // clearing Bits 0 to 7 of the SEL0, SEL1, and DIR registers for P7
     P7->SEL0 &= ~0xFF;
     P7->SEL1 &= ~0xFF;
-    P7->DIR &=  ~0xFF;
-
+    P7->DIR &= ~0xFF;
 }
 
 uint8_t Reflectance_Sensor_Read(uint32_t time)
