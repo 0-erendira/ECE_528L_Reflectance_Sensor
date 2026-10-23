@@ -29,6 +29,8 @@ int main(void)
     // Initialize the built-in red LED and the RGB LEDs
     LED1_Init();
     LED2_Init();
+    LED1_Output(RED_LED_OFF);
+    LED2_Output(RGB_LED_OFF);
 
     // Initialize the reflectance sensor
     Reflectance_Sensor_Init();
@@ -43,6 +45,7 @@ int main(void)
     {
         reflectance_sensor_data = Reflectance_Sensor_Read(1000);
         Print_Binary(reflectance_sensor_data);
+        Detect_Line_Position(reflectance_sensor_data);
         Clock_Delay1ms(10);
     }
 }

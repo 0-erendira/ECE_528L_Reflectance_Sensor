@@ -87,7 +87,7 @@ uint8_t Reflectance_Sensor_Read(uint32_t time)
     P7->OUT |= 0xFF;
 
     // Wait for 10 us using the Clock_Delay1us function
-    Clock_Delayus(10);
+    Clock_Delay1us(10);
 
     // After waiting 10 us, configure P7.0 - P7.7 as input GPIO pins
     // by clearing Bits 0 to 7 of the DIR register for P7
