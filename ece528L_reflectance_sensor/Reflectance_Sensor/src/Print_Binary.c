@@ -28,7 +28,7 @@ void Print_Binary(uint8_t value_to_convert)
             EUSCI_A0_UART_OutChar('_');
         }
 
-        printf("\n");
+       // printf("\n");
     }
 
 }
