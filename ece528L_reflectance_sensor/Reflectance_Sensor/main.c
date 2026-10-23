@@ -25,7 +25,7 @@ void Detect_Line_Position(uint8_t reflectance_sensor_data);
 
 void Detect_Line_Postion(uint8_t refletance_sesnor_data)
 {
-    switch (reflectance_sensor_data)
+    switch (reflectance_sensor_data))
     {
         case 0x18:
             LED1_Output(RGB_LED_OFF);
