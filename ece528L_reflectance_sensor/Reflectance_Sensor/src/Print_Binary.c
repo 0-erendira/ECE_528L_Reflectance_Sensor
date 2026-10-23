@@ -7,6 +7,8 @@
  * It relies on the EUSCI_A0_UART driver.
  *
  * @author Aaron Nanas
+ * @author Jose Flores
+ * @author Erendira Miranda
  *
  */
 
@@ -14,6 +16,19 @@
 
 void Print_Binary(uint8_t value_to_convert)
 {
-    // Your Print_Binary function implementation goes here
+    uint8_t bit_position;
+    printf("Line Sensor: ");
+
+    for (bit_position = 8; bit_position > 0; bit_position --)
+    {
+        EUSCI_A0_UART_OutChar(
+                (value_to_convert & (1U << (bit_position - 1U))) ? '1' : '0');
+        if(bit_position == 5)
+        {
+            EUSCI_A0_UART_OutChar('_');
+        }
+
+        printf("\n");
+    }
 
 }
