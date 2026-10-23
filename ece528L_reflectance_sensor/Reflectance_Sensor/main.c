@@ -23,57 +23,57 @@
 
 void Detect_Line_Position(uint8_t reflectance_sensor_data);
 
-void Detect_Line_Postion(uint8_t refletance_sesnor_data)
+void Detect_Line_Position(uint8_t reflectance_sensor_data)
 {
-    switch (reflectance_sensor_data))
+    switch (reflectance_sensor_data)
     {
-        case 0x18:
-            LED1_Output(RGB_LED_OFF);
+        case 0x18:  // Center: 0001_1000
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_GREEN);
             break;
 
-        case 0x1C:
-            LED1_Output(RGB_LED_OFF);
+        case 0x1C:  // Slightly left from center: 0001_1100
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_YELLOW);
             break;
 
-        case 0x38:
-            LED1_Output(RGB_LED_OFF);
+        case 0x38:  // Slightly right from center: 0011_1000
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_PINK);
             break;
 
-        case 0x01:
-            LED1_Output(RGB_LED_OFF);
+        case 0x01:  // Far left from center: 0000_0001
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_WHITE);
             break;
 
-        case 0x80:
-            LED1_Output(RGB_LED_OFF);
+        case 0x80:  // Far right from center: 1000_0000
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_SKY_BLUE);
             break;
 
-        case 0xF8:
-            LED1_Output(RGB_LED_OFF);
+        case 0xF8:  // Left turn: 1111_1000
+            LED1_Output(RED_LED_ON);
             LED2_Output(RGB_LED_WHITE);
             break;
 
-        case 0x1F:
-            LED1_Output(RGB_LED_OFF);
+        case 0x1F:  // Right turn: 0001_1111
+            LED1_Output(RED_LED_ON);
             LED2_Output(RGB_LED_SKY_BLUE);
             break;
 
-        case 0xFF:
-            LED1_Output(RGB_LED_OFF);
+        case 0xFF:  // T-intersection: 1111_1111
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_BLUE);
             break;
 
-        case 0x00:
-            LED1_Output(RGB_LED_OFF);
+        case 0x00:  // Dead end: 0000_0000
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_RED);
             break;
 
         default:
-            LED1_Output(RGB_LED_OFF);
+            LED1_Output(RED_LED_OFF);
             LED2_Output(RGB_LED_OFF);
             break;
     }
