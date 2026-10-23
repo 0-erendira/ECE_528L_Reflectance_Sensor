@@ -76,7 +76,7 @@ uint8_t Reflectance_Sensor_Read(uint32_t time)
 
     // Turn on the odd-numbered IR LEDs by
     // setting Bit 2 of the OUT register for P9
-    P7->OUT |= 0x04;
+    P9->OUT |= 0x04;
 
     // Configure P7.0 - P7.7 as output GPIO pins by
     // setting Bits 0 to 7 of the DIR register for P7
