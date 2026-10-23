@@ -72,7 +72,7 @@ uint8_t Reflectance_Sensor_Read(uint32_t time)
 {
     // Turn on the even-numbered IR LEDs by
     // setting Bit 3 of the OUT register for P5
-    P5->OUT |= 0x88;
+    P5->OUT |= 0x08;
 
     // Turn on the odd-numbered IR LEDs by
     // setting Bit 2 of the OUT register for P9
